@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankit Kumar | Data Science & AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+  :root {
+    --bg-dark: #020617;
+    --bg-light: #0f172a;
+    --primary: #38bdf8;
+    --secondary: #22d3ee;
+    --text-light: #e5e7eb;
+    --text-muted: #94a3b8;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));
+    color: var(--text-light);
+  }
+
+  header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    gap: 40px;
+  }
+
+  .hero-text {
+    max-width: 600px;
+  }
+
+  .hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-text h1 span {
+    color: var(--primary);
+  }
+
+  .hero-text p {
+    margin: 20px 0;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #020617;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  .hero-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.35);
+  }
+
+  section {
+    padding: 90px 10%;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .about-card {
+    background: rgba(2, 6, 23, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .about-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .skills,
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+
+  .card {
+    background: rgba(2, 6, 23, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .projects .card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .projects .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(56, 189, 248, 0.15));
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card h3 {
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .section-divider {
+    width: 0;
+    height: 1px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0;
+    transition: width 1s ease, opacity 0.8s ease;
+  }
+
+  .section-divider.visible {
+    width: 60%;
+    opacity: 0.6;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 10%;
+    background: #020617;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    header {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    .about {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero-left" style="display:flex; align-items:center; gap:40px;">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Ankit Kumar</span></h1>
+      <p>Data Science & Artificial Intelligence enthusiast focused on analytics, machine learning, and building impactful data-driven solutions.</p>
+      <a href="#projects" class="btn">View My Work</a>
+      <a href="resume.pdf" class="btn" style="margin-left:15px; background:transparent; color:var(--primary); border:2px solid var(--primary);">Download Resume</a>
+    </div>
+    
+  </div>
+
+  <!-- Profile Photo -->
+  <img src="profile.jpg" alt="Ankit Kumar" class="hero-photo hero-graphic" />
+</header>
+
+<div class="section-divider"></div>
+
+<section>
+  <h2>About Me</h2>
+  <div class="about">
+    <div class="about-card">
+      <p>
+        I am a college student passionate about Data Science and AI, with hands-on experience in Python, SQL, Power BI, and machine learning.
+        I enjoy transforming raw data into insights and building scalable, real-world solutions.
+      </p>
+    </div>
+    <div class="about-card">
+      <p>
+        My goal is to grow as a data professional, contribute to innovative projects, and continuously improve my analytical and technical skills.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+    <div class="card" style="display:flex; gap:20px; align-items:center;">
+      <i class="fab fa-python" style="font-size:2.2rem; color:var(--primary);"></i>
+      <div><h3>Python</h3><p>Data analysis, automation, ML models</p></div>
+    </div>
+    <div class="card" style="display:flex; gap:20px; align-items:center;">
+      <i class="fas fa-database" style="font-size:2.2rem; color:var(--primary);"></i>
+      <div><h3>SQL</h3><p>Database querying & data extraction</p></div>
+    </div>
+    <div class="card" style="display:flex; gap:20px; align-items:center;">
+      <i class="fas fa-chart-line" style="font-size:2.2rem; color:var(--primary);"></i>
+      <div><h3>Power BI</h3><p>Dashboards & business insights</p></div>
+    </div>
+    <div class="card" style="display:flex; gap:20px; align-items:center;">
+      <i class="fas fa-robot" style="font-size:2.2rem; color:var(--primary);"></i>
+      <div><h3>Machine Learning</h3><p>Regression, classification, EDA</p></div>
+    </div>
+    <div class="card" style="display:flex; gap:20px; align-items:center;">
+      <i class="fas fa-file-excel" style="font-size:2.2rem; color:var(--primary);"></i>
+      <div><h3>Excel</h3><p>Advanced formulas & reporting</p></div>
+    </div>
+    <div class="card" style="display:flex; gap:20px; align-items:center;">
+      <i class="fas fa-chart-pie" style="font-size:2.2rem; color:var(--primary);"></i>
+      <div><h3>Data Visualization</h3><p>Insightful charts & storytelling</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="skills" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+
+    <a class="card" href="certificates/data-science-ml.pdf" target="_blank" style="display:flex; gap:20px; align-items:center; text-decoration:none; color:inherit;">
+      <img src="https://img.icons8.com/color/96/artificial-intelligence.png" style="width:56px" />
+      <div>
+        <h3>Data Science & Machine Learning</h3>
+        <p>IBM · Python, Statistics, ML</p>
+      </div>
+    </a>
+
+    <a class="card" href="certificates/powerbi.pdf" target="_blank" style="display:flex; gap:20px; align-items:center; text-decoration:none; color:inherit;">
+      <img src="https://img.icons8.com/color/96/power-bi.png" style="width:56px" />
+      <div>
+        <h3>Power BI & Data Visualization</h3>
+        <p>Microsoft / Coursera</p>
+      </div>
+    </a>
+
+    <a class="card" href="certificates/sql.pdf" target="_blank" style="display:flex; gap:20px; align-items:center; text-decoration:none; color:inherit;">
+      <img src="https://img.icons8.com/color/96/database.png" style="width:56px" />
+      <div>
+        <h3>SQL for Data Analytics</h3>
+        <p>Google</p>
+      </div>
+    </a>
+
+    <a class="card" href="certificates/python.pdf" target="_blank" style="display:flex; gap:20px; align-items:center; text-decoration:none; color:inherit;">
+      <img src="https://img.icons8.com/color/96/python.png" style="width:56px" />
+      <div>
+        <h3>Python Programming</h3>
+        <p>Coursera</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <script>/* marker */</script>
+    <div class="card">
+      <h3>CleanDive</h3>
+      <p>Tech-enabled platform to modernize and organize the laundry sector using data-driven decision making.</p>
+    </div>
+    <div class="card">
+      <h3>Power BI Analytics Dashboard</h3>
+      <p>Interactive dashboards built using real-world datasets for business insights.</p>
+    </div>
+    <div class="card">
+      <h3>Machine Learning Models</h3>
+      <p>Implemented predictive models using Python and scikit-learn.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="about" style="grid-template-columns:1fr; max-width:600px; margin:0 auto;">
+    <div class="about-card" style="text-align:center;">
+      <p style="font-size:1.05rem;">Feel free to reach out for opportunities, collaborations, or discussions.</p>
+      <p style="margin-top:15px; font-weight:600; color:var(--primary);">📧 Email: <a href="mailto:ankitjha7425@gmail.com" style="color:var(--secondary); text-decoration:none;">ankitjha7425@gmail.com</a></p>
+      <div style="margin-top:20px; display:flex; justify-content:center; gap:25px; font-size:1.8rem;">
+        <a href="https://www.linkedin.com/in/ankit-kumar-1650b9262" target="_blank" style="color:var(--primary);"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ankit7425" target="_blank" style="color:var(--primary);"><i class="fab fa-github"></i></a>
+      </div>
+      <div style="margin-top:25px;">
+        <a href="resume.pdf" class="btn">Download Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ankit Kumar | Data Science & AI Portfolio</p>
+</footer>
+
+<script>
+  // Scroll animations (titles, cards, dividers)
+  const animatedItems = document.querySelectorAll('h2, .about-card, .section-divider, .projects .card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 120);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  animatedItems.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
