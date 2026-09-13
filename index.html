@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -357,9 +356,9 @@
 
 <script>
   // Scroll animations (titles, cards, dividers)
-  const animatedItems = document.querySelectorAll('h2, .about-card, .section-divider, .projects .card');
+  var animatedItems = document.querySelectorAll('h2, .about-card, .section-divider, .projects .card');
 
-  const observer = new IntersectionObserver((entries) => {
+  var observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         setTimeout(() => {
@@ -374,7 +373,6 @@
 
 </body>
 </html>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -717,7 +715,7 @@
         <a href="https://github.com/ankit7425" target="_blank" style="color:var(--primary);"><i class="fab fa-github"></i></a>
       </div>
       <div style="margin-top:25px;">
-        <a href="C:\Users\goodb\OneDrive\Desktop\portfolio\html\Ankit_resume (2).pdf" class="btn">Download Resume</a>
+        <a href="resume.pdf" class="btn">Download Resume</a>
       </div>
     </div>
   </div>
@@ -729,9 +727,9 @@
 
 <script>
   // Scroll animations (titles, cards, dividers)
-  const animatedItems = document.querySelectorAll('h2, .about-card, .section-divider, .projects .card');
+  var animatedItems = document.querySelectorAll('h2, .about-card, .section-divider, .projects .card');
 
-  const observer = new IntersectionObserver((entries) => {
+  var observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         setTimeout(() => {
@@ -746,4 +744,3 @@
 
 </body>
 </html>
->>>>>>> dc230bc (Add portfolio website)
